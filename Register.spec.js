@@ -16,8 +16,8 @@ test('Registo válido', async ({ page }) => {
     await page.locator('#city').fill('Lisboa');
     await page.locator('#state').fill('Lisboa');
     await page.locator('#phone').fill('123456789');
-    await page.locator('#email').fill('test1508@email.com');
-    await page.locator('#password').fill('Test1508.');
+    await page.locator('#email').fill('test1408@email.com');
+    await page.locator('#password').fill('Test1408.');
     await page.locator('[data-test="register-submit"]').click();
 })
 
