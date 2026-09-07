@@ -8,7 +8,7 @@ test('Contact Formulário sem login', async ({ page }) => {
     await page.locator('[data-test="last-name"]').fill("Test01")
     await page.locator('[data-test="email"]').fill("Test01@email.com")
     await page.locator('[data-test="subject"]').selectOption("Customer service")
-await page.locator('[data-test="attachment"]').setInputFiles("C:/Users/Silvana Duarte/Documentos/testdoc")
+await page.locator('[data-test="attachment"]').setInputFiles("/home/smd54789/Automação_Git/Test.docx")
     await page.locator('[data-test="message"]').fill("testdoc")
     await page.locator('[data-test="contact-submit"]').click()
 })
