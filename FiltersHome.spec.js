@@ -133,5 +133,20 @@ test('Filter - By Category - Power Tools', async ({ page }) => {
     const firstImage = page.locator('.card-img-top').first();
     await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
     await page.locator('[data-test="category-01M2JSAME1MY30QP0N15GGZN12"]').click()
-    await expect(firstImage).toHaveAttribute('
-})    
+    await expect(firstImage).toHaveAttribute('alt', 'Sheet Sander')
+    await page.locator('[data-test="category-01M2JSAME1MY30QP0N15GGZN12"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDM"]').click()
+    await expect(page.getByText('There are no products found.')).toBeVisible()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDM"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDN"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Sheet Sander')
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDN"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDP"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Circular Saw')
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDP"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDQ"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Cordless Drill 12V')
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDQ"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
+    
+})
