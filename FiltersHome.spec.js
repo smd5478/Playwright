@@ -147,6 +147,50 @@ test('Filter - By Category - Power Tools', async ({ page }) => {
     await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDQ"]').click()
     await expect(firstImage).toHaveAttribute('alt', 'Cordless Drill 12V')
     await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDQ"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')  
+})
+
+test('Filter - By Category - Other', async ({ page }) => {
+    await page.goto("https://practicesoftwaretesting.com/")
+    const firstImage = page.locator('.card-img-top').first();
     await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
-    
+    await page.locator('[data-test="category-01M2RBVF7K3Q132GWVFYMWJP83"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Safety Googles')
+    await page.locator('[data-test="category-01M2JSAME1MY30QP0N15GGZN12"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDM"]').click()
+    await expect(page.getByText('There are no products found.')).toBeVisible()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDM"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDN"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Sheet Sander')
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDN"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDP"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Circular Saw')
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDP"]').click()
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDQ"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Cordless Drill 12V')
+    await page.locator('[data-test="category-01M2P0AG6RXNKREGSNKQ9TKEDQ"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers') 
+})
+
+test('Filter - By Category - Brand', async ({ page }) => {
+    await page.goto("https://practicesoftwaretesting.com/")
+    const firstImage = page.locator('.card-img-top').first();
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
+    await page.locator('[data-test="brand-01M2RBVEXW9F4A0T10SE2K56J0"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Claw Hammer with Shock Reduction Grip')
+    await page.locator('[data-test="brand-01M2RBVEXW9F4A0T10SE2K56J0"]').click()
+    await page.locator('[data-test="brand-01M2Z7JRK6GH7F226N5DCBZ52N"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Claw Hammer')
+    await page.locator('[data-test="brand-01M2Z7JRK6GH7F226N5DCBZ52N"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
+})
+
+test('Filter - Sustainability', async ({ page }) => {
+    await page.goto("https://practicesoftwaretesting.com/")
+    const firstImage = page.locator('.card-img-top').first();
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
+    await page.locator('[data-test="eco-friendly-filter"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Wood Saw')
+    await page.locator('[data-test="eco-friendly-filter"]').click()
+    await expect(firstImage).toHaveAttribute('alt', 'Combination Pliers')
 })
