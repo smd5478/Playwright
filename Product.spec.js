@@ -12,5 +12,5 @@ test('Product - Information', async ({ page }) => {
     await page.getByLabel('category').toHaveText('Pliers')
     await page.getByLabel('brand').toHaveText('MightyCraft Hardware')
     await page.getByLabel('price').toHaveText('9.17')
-    await page expect(page.locator('.co2'))
+    await expect(page.locator('.co2-letter.active')).toHaveClass(/active/)
 })
