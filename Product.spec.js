@@ -24,6 +24,10 @@ test('Product - Information', async ({ page }) => {
     await page.getByRole('alert').toHaveText('Product added to shopping cart.')
     await page.locator('[data-test="add-to-favorites"]').click()
     await page.getByRole('alert').toHaveText('Unauthorized can not add product to favorite list.')
-    await page.getByRole('button', 
+    const compareButton = page.locator('[data-test="add-to-compare"]')
+    await expect(compareButton).toHaveClass('btn btn-outline-primary')
+    await compareButton.click()
+    await expect(compareButton).toHaveClass('btn btn-primary')
+    
 
 })
