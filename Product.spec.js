@@ -28,6 +28,18 @@ test('Product - Information', async ({ page }) => {
     await expect(compareButton).toHaveClass('btn btn-outline-primary')
     await compareButton.click()
     await expect(compareButton).toHaveClass('btn btn-primary')
+    await page.locator('[data-test="specs-title]').toHaveText('Specifications')
+    await page.locator('[data-test="spec-name"]').toHaveText('Handle Material')
+    await page.locator('[data-test="spec-value-text"]').toHaveText('PVC')
+    await page.locator('[data-test="spec-name"]').toHaveText('Length')
+    await page.locator('[data-test="spec-unit"]').toHaveText('200 mm')
+    await page.locator('[data-test="spec-name"]').toHaveText('Material')
+    await page.locator('[data-test="spec-value-text"]').toHaveText('Carbon Steel')
+    await page.locator('[data-test="spec-name"]').toHaveText('Warranty')
+    await page.locator('[data-test="spec-unit"]').toHaveText('1 years')
+    await page.locator('[data-test="spec-name"]').toHaveText('Weight')
+    await page.locator('[data-test="spec-value-text"]').toHaveText
+
     
 
 })
