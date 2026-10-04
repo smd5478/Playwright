@@ -147,14 +147,14 @@ test('Product - Information', async ({ page }) => {
     await expect(page.getByText('Long Nose Pliers'))
         .toBeVisible()
 
-const products = [
+    const products = [
     'Combination Pliers',
     'Pliers',
     'Bolt Cutters',
     'Long Nose Pliers'
-]
+    ]
 
-for (const product of products) {
+    for (const product of products) {
     const card = page.locator('.card').filter({ 
         has: page.getByRole('img', { name: product })
     })
@@ -168,11 +168,12 @@ for (const product of products) {
 
     await expect(page.getByRole('heading', { name: 'Related products' }))
         .toBeVisible()
-}
-await expect(page.locator('.card-img-top').first())
-    .toHaveAttribute('alt', 'Slip Joint Pliers')
+    }
+    await expect(page.locator('.card-img-top').first())
+        .toHaveAttribute('alt', 'Slip Joint Pliers')
 
-await expect(page.locator('.figure-caption')).toHaveText('Photo by Yasin Hasan on Unsplash')
+    await expect(page.locator('.figure-caption')).toHaveText('Photo by Yasin Hasan on Unsplash')
+    })
 })
 
 
@@ -180,4 +181,3 @@ await expect(page.locator('.figure-caption')).toHaveText('Photo by Yasin Hasan o
 
     
 
-})
