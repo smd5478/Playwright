@@ -174,10 +174,3 @@ test('Product - Information', async ({ page }) => {
 
     await expect(page.locator('.figure-caption')).toHaveText('Photo by Yasin Hasan on Unsplash')
     })
-})
-
-
-
-
-    
-
